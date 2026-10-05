@@ -1,4 +1,4 @@
-package main.java;
+package week0;
 
 public class HelloWorld {
     public static void main(String[] args){
