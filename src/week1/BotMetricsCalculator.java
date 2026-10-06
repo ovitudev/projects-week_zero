@@ -3,7 +3,7 @@ package week1;
 public class BotMetricsCalculator {
     public static void main(String[] args) {
         double result = calculateRate();
-        System.out.printf("%f", result);
+        System.out.printf("\nResolution Rate: %.0f%%\n", result);
     }
 
     public static double calculateRate() {
@@ -13,7 +13,7 @@ public class BotMetricsCalculator {
 
         double resolutionRate;
 
-        resolutionRate = totalConversations * ((double) handedOff / 100);
+        resolutionRate = (double) resolvedByBot / totalConversations * 100;
         return resolutionRate;
     }
 }
