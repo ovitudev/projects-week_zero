@@ -1,4 +1,4 @@
-package week1;
+package week1.part1;
 
 public class BotMetricsCalculator {
     public static void main(String[] args) {
