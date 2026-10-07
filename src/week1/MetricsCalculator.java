@@ -1,4 +1,4 @@
-package week2;
+package week1;
 
 public class MetricsCalculator {
     public double calculator(int total, int totalResolvedByBot){
