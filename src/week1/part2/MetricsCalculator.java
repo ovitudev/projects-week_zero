@@ -1,12 +1,17 @@
 package week1.part2;
 
 public class MetricsCalculator {
-    public double calculatorRetention(int total, int totalResolvedByBot){
-        return (double) totalResolvedByBot / total * 100;
-    }
+    public double calculatePercent(double base, double percentage){
+        if (base == 0 && percentage > 0) {
+            throw new IllegalArgumentException("Error: The overall resolved total cannot be zero if the total resolved by the bot is greater than zero.");
+        }
+        if(percentage < 0){
+            throw new IllegalArgumentException("Error: The total calculated by the bot cannot be a negative value.");
+        }
+        if(base == 0 && percentage == 0 ){
+            return 0;
+        }
 
-    public double calculatorTransfer(int total, int totalResolvedByBot){
-        int transferByBot = total - totalResolvedByBot;
-        return (double) transferByBot / total * 100;
+        return percentage / base * 100;
     }
 }
