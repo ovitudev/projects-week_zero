@@ -11,22 +11,27 @@ public class Main {
         int total;
         int totalResolvedByBot;
 
-        try {
+
+
             System.out.println("\nEnter the total number of tickets resolved:");
             total = scan.nextInt();
 
             System.out.println("Enter the total number of tickets resolved by the bot:");
             totalResolvedByBot = scan.nextInt();
 
-            System.out.println("\nResolution by bot rate:");
-            System.out.printf("%.1f%%", metricsCalculator.calculatePercent(total, totalResolvedByBot));
+        double transferred = total - totalResolvedByBot;
 
-            double transferred = total - totalResolvedByBot;
+        try {
+            double resolvedByBot = metricsCalculator.calculatePercent(total, totalResolvedByBot);
+            double transferredByBot = metricsCalculator.calculatePercent(total, transferred);
+
+            System.out.println("\nResolution by bot rate:");
+            System.out.printf("%.1f%%", resolvedByBot);
 
             System.out.println("\nTransfer by bot rate:");
-            System.out.printf("%.1f%%", metricsCalculator.calculatePercent(total, transferred));
+            System.out.printf("%.1f%%", transferredByBot);
         } catch (IllegalArgumentException e) {
-        System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 }
